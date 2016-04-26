@@ -2,71 +2,76 @@ a {
     text-decoration: none;
     font-family: "Microsoft Yahei";
     outline: none;
+    color: #bfbfbf;
 }
 
 body {
     background-color: #000000;
 }
-
+img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
 
 /*header*/
 
-.navheader {
+#header {
     background: url("/image/header-banner.jpg") no-repeat center;
     width: 100%;
-    min-width: 1200px;
-    height: 224px;
+    height: auto;
 }
 
+
 #nav {
-    width: 1200px;
+    width: auto;
     display: block;
     margin: 0 auto;
 }
 
-.nav-link {
+#navbar-collapse {
     margin-top: 10px;
-    width: 100%;
-    height: 42px;
     box-sizing: border-box;
     border-top: 1px solid #262626;
     border-bottom: 1px solid #262626;
     text-align: center;
+    margin: 0 auto;
 }
-
+#navbar-nav {
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navbar-backgrond {
+    border: 1px solid white;
+}
 .nav-logo {
-    text-align: center
+    text-align: center;
 }
-
+.icon-hed{
+    background-color: #7F7E7E;
+}
 .nav-cut {
     width: 100%;
     height: 45px;
 }
-
-.navbar-nav li {
+#navbar-collapse li {
     padding: 0;
     margin: 0;
 }
 
-#nav .nav-link span a {
+#navbar-collapse li a {
     text-decoration: none;
-    line-height: 3;
     margin: 0 25px;
     color: #bfbfbf;
 }
-
 
 /*footer*/
 
 #footer {
     text-align: center;
     width: 100%;
-}
-
-.code-call {
-    text-align: center;
-    margin-right: 20px;
-    margin-top: 20px;
+    margin: 0 auto;
 }
 
 #footer .ft {
@@ -88,10 +93,27 @@ body {
     color: #494848;
 }
 
+.footer-img {
+    display:inherit;
+}
+
 .top-banner {
     background-color: rgba(255, 255, 255, 0.55);
 }
 
 .top-banner a {
     color: #019135;
+}
+#myCarousel {
+    margin:0 auto;
+}
+#myCarousel span {
+    position: absolute;
+    top: 50%;
+}
+
+#carousel-inner img {
+    width:100%;
+    height: 100%;
+    max-height: 480px
 }

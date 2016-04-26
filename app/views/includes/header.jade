@@ -1,5 +1,4 @@
-.container
-div.navheader
+div.container#header
   div#nav
     div.nav-cut
       if user
@@ -14,24 +13,33 @@ div.navheader
           a.navbar-link(href='#',data-toggle='modal',data-target="#loginModal") 登录
     div.nav-logo
       a(href="/",title="忆光年")
-        img(src="/image/logo.png")
-    div#nav-lik.nav-link
-        span
-          a(href='/') 首页
-        span
-          a(href='/') 最新客照
-        span
-          a(href='/') 场馆介绍
-        span
-          a(href='/') 礼服造型
-        span
-          a(href='/') 促销团购
-        span
-          a(href='/') 在线预约
-        span
-          a(href='/') 意见反馈
-        span
-          a(href='/') 系统管理
+        img.img-rounded(src="/image/logo.png")
+  nav.navbar#navbar-nav(rol="navigation")
+    div.navbar-header
+      button.navbar-toggle.navbar-backgrond(type="button",data-toggle="collapse",data-target="#navbar-collapse")
+        span.sr-only 切换导航
+        span.icon-bar.icon-hed
+        span.icon-bar.icon-hed
+        span.icon-bar.icon-hed
+      div#navbar-collapse.collapse.navbar-collapse
+        div
+          ul.nav.navbar-nav
+            li
+              a(href='/') 首页
+            li
+              a(href='/') 最新客照
+            li
+              a(href='/') 场馆介绍
+            li
+              a(href='/') 礼服造型
+            li
+              a(href='/') 促销团购
+            li
+              a(href='/') 在线预约
+            li
+              a(href='/') 意见反馈
+            li
+              a(href='/') 系统管理
       
 #signupModal.modal.fade
   .modal-dialog
