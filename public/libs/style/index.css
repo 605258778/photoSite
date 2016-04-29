@@ -1,101 +1,3 @@
-a {
-    text-decoration: none;
-    font-family: "Microsoft Yahei";
-    outline: none;
-    color: #bfbfbf;
-}
-
-body {
-    background-color: #000000;
-}
-img {
-    page-break-inside: avoid;
-    max-width: 100% !important;
-  }
-
-/*header*/
-
-#header {
-    background: url("/image/header-banner.jpg") no-repeat center;
-    width: 100%;
-    height: auto;
-}
-
-
-#nav {
-    width: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-#navbar-collapse {
-    margin-top: 10px;
-    box-sizing: border-box;
-    border-top: 1px solid #262626;
-    border-bottom: 1px solid #262626;
-    text-align: center;
-    margin: 0 auto;
-}
-#navbar-nav {
-    width: auto;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-}
-.navbar-backgrond {
-    border: 1px solid white;
-}
-.nav-logo {
-    text-align: center;
-}
-.icon-hed{
-    background-color: #7F7E7E;
-}
-.nav-cut {
-    width: 100%;
-    height: 45px;
-}
-#navbar-collapse li {
-    padding: 0;
-    margin: 0;
-}
-
-#navbar-collapse li a {
-    text-decoration: none;
-    margin: 0 25px;
-    color: #bfbfbf;
-}
-
-/*footer*/
-
-#footer {
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-}
-
-#footer .ft {
-    width: 100%;
-    margin: 23px auto 0 auto;
-}
-
-#footer .footer-link a {
-    color: #949494;
-    font-size: 15px;
-    margin: 0 8px;
-}
-
-.footer-copy {
-    margin-top: 21px;
-    font-size: 12px;
-    font-family: '宋体';
-    font-weight: bold;
-    color: #494848;
-}
-
-.footer-img {
-    display:inherit;
-}
 
 .top-banner {
     background-color: rgba(255, 255, 255, 0.55);
@@ -110,6 +12,7 @@ img {
 #myCarousel span {
     position: absolute;
     top: 50%;
+    font-size: 50px;
 }
 
 #carousel-inner img {

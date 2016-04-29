@@ -1,3 +1,6 @@
+var Index = require('../app/controllers/index')
+var Guest = require('../app/controllers/guest')
+var Manager = require('../app/controllers/manager')
 //路由处理层
 module.exports = function(app) {
 	//pre hander user持久化逻辑预处理
@@ -5,10 +8,8 @@ module.exports = function(app) {
 		next();
 	})
 	//index page
-	app.get('/', function(req,res){
-		res.render('index', {
-                title: '首页',
-            })
-	});
-
+	app.get('/',Index.index)
+	//guest page
+	app.get('/guest',Guest.index)
+	app.get('/manager',Manager.index)
 }
