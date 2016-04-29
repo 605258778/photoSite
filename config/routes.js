@@ -11,5 +11,7 @@ module.exports = function(app) {
 	app.get('/',Index.index)
 	//guest page
 	app.get('/guest',Guest.index)
+	//manager
 	app.get('/manager',Manager.index)
+	app.post('/manager/Phoslider',Manager.saveSliderPho,Manager.saveSlider)
 }
