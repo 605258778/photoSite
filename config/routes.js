@@ -13,5 +13,7 @@ module.exports = function(app) {
 	app.get('/guest',Guest.index)
 	//manager
 	app.get('/manager',Manager.index)
+	app.post('/manager/tplbEdit',Manager.tplbEdit)
+	app.post('/manager/tplbDel',Manager.tplbDel)
 	app.post('/manager/Phoslider',Manager.saveSliderPho,Manager.saveSlider)
 }

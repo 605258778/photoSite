@@ -3,16 +3,21 @@ extends ../layout
 block content
 	div#myCarousel.carousel.slide
 		ol.carousel-indicators
-			li.active(data-target="#myCarousel",data-slide-to="0")
-			li(data-target="#myCarousel",data-slide-to="1")
-			li(data-target="#myCarousel",data-slide-to="2")
+			- for (var i = 0; i < phoslider.length; ++i) 
+				if i==0
+					li.active(data-target="#myCarousel",data-slide-to="#{i}")
+				else
+					li(data-target="#myCarousel",data-slide-to="#{i}")
 		div.carousel-inner#carousel-inner
-			div.item.active
-				img(src="/image/01.jpg" alt="First slide")
-			div.item
-				img(src="/image/02.jpg" alt="Second slide")
-			div.item
-				img(src="/image/03.jpg" alt="Third slide")
+			- for (var j = 0; j < phoslider.length; ++j) 
+				if j==0
+					div.item.active
+						a(href="#{phoslider[j].redirlink}")
+							img(src="./upload/#{phoslider[j].pholink}" alt="First slide")
+				else 
+					div.item
+						a(href="#{phoslider[j].redirlink}")
+							img(src="./upload/#{phoslider[j].pholink}" alt="First slide")
 		a.carousel-control.left(href="#myCarousel" 
 	      data-slide="prev") 
 			span &lsaquo;
@@ -20,3 +25,6 @@ block content
 	      data-slide="next") 
 			span &rsaquo;
 	link(href="/libs/style/index.css",rel="stylesheet")
+	script(type='text/javascript').
+		debugger;
+		console.log('2332')

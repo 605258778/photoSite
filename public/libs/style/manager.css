@@ -1,0 +1,681 @@
+/*left*/
+.manager-div {
+    max-width: 1100px;
+    margin: 0 auto;
+    position:relative;
+}
+.leftsidebar_box {
+width: 160px;
+height: auto !important;
+overflow: visible !important;
+position: absolute;
+background-color: #898E91;
+}
+
+.line {
+height: 2px;
+width: 100%;
+background-repeat: repeat-x;
+}
+
+.leftsidebar_box dt {
+padding-left: 40px;
+padding-right: 10px;
+background-repeat: no-repeat;
+background-position: 10px center;
+color: #f5f5f5;
+font-size: 12px;
+position: relative;
+line-height: 28px;
+cursor: pointer;
+}
+.leftsidebar_box dt img {
+    margin: auto 10px;
+}
+.leftsidebar_box dd {
+background-color: #98A395;
+padding-left: 40px;
+}
+
+.leftsidebar_box dd a {
+color: #f5f5f5;
+line-height: 20px;
+text-decoration: none;
+}
+
+.system_log dt {
+background-image: url(/image/system.png)
+}
+
+.custom dt {
+background-image: url(/image/custom.png)
+}
+
+.channel dt {
+background-image: url(/image/channel.png)
+}
+
+.app dt {
+background-image: url(/image/app.png)
+}
+
+.cloud dt {
+background-image: url(/image/cloud.png)
+}
+
+.syetem_management dt {
+background-image: url(/image/syetem_management.png)
+}
+
+.source dt {
+background-image: url(/image/source.png)
+}
+
+.statistics dt {
+background-image: url(/image/statistics.png)
+}
+
+.leftsidebar_box dl dd:last-child {
+padding-bottom: 10px;
+}
+
+
+/*common.css*/
+.container-fluid {
+	padding-left: 0!important;
+}
+#wrap {
+	min-width: 100%;
+	position: absolute;
+	background: #eff3f6 bottom;
+	min-height: 100%;
+	overflow: hidden;
+}
+/*@media (min-width: 660px) #wrap {
+	min-width: 650px;
+}
+@media (min-width: 768px) #wrap {
+	width: 100%;
+	min-width: 750px;
+}
+@media (min-width: 992px) #wrap {
+	width: 100%;
+	min-width: 970px;
+}
+@media (min-width: 1200px) #wrap {
+	width: 100%;
+	min-width: 1170px;
+}*/
+
+.leftMeun {
+	position: absolute;
+	box-sizing: border-box;
+	width: 200px;
+	height: 100%;
+	background: #4d5e70 bottom;
+}
+.leftMeun >div {
+	padding-left: 20px;
+}
+#rightContent {
+	box-sizing: border-box;
+	float: left;
+	padding-left: 200px;
+	overflow-y: overlay;
+	overflow-x: hidden;
+	clear: both;
+	color: #717592;
+    min-height: 500px;
+}
+/*左侧菜单栏*/
+
+#logoDiv {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 70px;
+	background-color: #354457;
+	font-size: 17px;
+	color: #fff;
+	vertical-align: bottom;
+}
+#logo {
+	height: 30px;
+	padding-right: 5px;
+}
+#logoDiv span {
+	vertical-align: bottom;
+}
+#personInfor {
+	padding: 10px 5px 10px;
+	margin: 0 5px;
+	color: #b3bcc5;
+	border-bottom: 1px solid #354457;
+	overflow-x: hidden;
+	padding-left: 20px;
+}
+#personInfor p {
+	font-size: 12px;
+	margin-left: -5px;
+}
+#personInfor a {
+	color: #B3BCC5;
+	text-decoration: underline;
+}
+#userName {
+	font-size: 15px!important;
+	padding: 0;
+	margin: 0;
+}
+.line-div {
+	color: #F00;
+	height: 5px;
+}
+.meun dl {
+	padding: 0 10px;
+}
+.meun-title {
+	color: #828e9a;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.meun-item {
+	line-height: 40px;
+	height: 40px;
+	color: #aab1b7;
+	cursor: pointer;
+}
+.meun-item a {
+	color: #aab1b7;
+	display: block;
+}
+.meun-item-active a {
+	color: #c4c7cc;
+	display: block;
+}
+.meun-item img {
+	padding-right: 8px;
+	height: 20px;
+}
+.meun-item-active {
+	background-color: #3d4e60;
+	border-right: 4px solid #647f9d;
+	color: #fff;
+}
+/*右侧具体内容栏目*/
+
+.check-div {
+	height: 70px;
+	line-height: 70px;
+	*line-height: 60px;
+	background-color: #fff;
+	padding-left: 30px;
+	min-width: 824px !important;
+	box-sizing: border-box;
+}
+.check-div button {
+	font-size: 12px;
+	font-weight: bold;
+}
+.check-div select {
+	height: 26px;
+	width: 120px!important;
+	display: inline;
+	color: #ccc;
+}
+.check-div input {
+	width: 200px !important;
+	display: inline;
+}
+.tab-pane {
+	color: #9095ab;
+}
+.tableHeader {
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #646987;
+	background-color: #e3e8ee;
+	padding: 0 30px;
+	text-align: left;
+}
+.codeTop {
+	text-align: right;
+}
+.tablebody {
+	margin: 20px 30px;
+	text-align: left;
+}
+.tablebody .row {
+	margin-top: 10px;
+	background-color: #fff;
+	height: 70px;
+	line-height: 70px;
+}
+.footer {
+	float: right;
+	margin-right: 20px
+}
+.modal-header {
+	/*background-color: #e3e8ee;*/
+}
+.modal-title {
+	font-weight: bold;
+}
+.expand-col {
+	padding: 0;
+	margin-top: 30px;
+}
+.levl2 {
+	padding-left: 30px;
+}
+.levl3 {
+	padding-left: 40px;
+}
+.sitTable {
+	background-color: #fff;
+	padding-right: 30px;
+}
+.sitTable table {
+	border-top: none;
+	background-color: #FFF;
+}
+/*表格上部边框线*/
+
+.sitTable .table>tbody>tr:first-child>td {
+	border-top: none;
+}
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+	vertical-align: middle !important;
+	padding: 8px 15px!important;
+}
+.btn {
+	border: none;
+}
+.toggle-btn {
+	display: none;
+	width: 52px;
+	height: 50px;
+	font-size: 20px;
+	padding: 15px;
+	cursor: pointer;
+	float: left;
+	color: #212121;
+	-moz-transition: all 0.2s ease-out 0s;
+	-webkit-transition: all 0.2s ease-out 0s;
+	transition: all 0.2s ease-out 0s;
+}
+.pd0px {
+	padding-left: 200px!important;
+}
+select {
+	padding: 0 auto!important;
+}
+/*进度条样式*/
+
+@media (max-width: 1123px) {
+	#rightContent {
+		padding-left: 0;
+	}
+	.tab-pane {
+		min-width: 973px;
+	}
+	.leftMeun {
+		display: none;
+	}
+	.toggle-btn {
+		display: block;
+	}
+}
+.input-xs {
+	height: 25px;
+	line-height: 25px;
+}
+.btn-white {
+	background: #fff;
+	border: 1px solid #ccc!important;
+	font-weight: normal!important;
+	margin-right: 10px;
+}
+.btn-green {
+	border: 1px solid #ccc!important;
+	font-weight: normal!important;
+	margin-right: 10px;
+	color: #fff;
+	background: #529373;
+}
+.btn-yellow {
+	background: #fff;
+	border: 1px solid #ccc!important;
+	font-weight: normal!important;
+	margin-right: 10px;
+	color: #eab67c!important;
+	border: 1px solid #eab67c!important;
+}
+/*颜色*/
+
+.gray {
+	color: #b7b7b7;
+	font-weight: normal;
+	padding: 0 10px;
+}
+.footer .glyphicon {
+	font-size: 12px;
+	color: #00BDEF;
+	padding: 4px;
+	background-color: #fff;
+	margin-right: 10px;
+}
+.zhi {
+	margin-top: 33px;
+	border-radius: 0!important;
+	width: 50px!important;
+	height: 21px!important;
+	line-height: 20px;
+	border: none;
+	box-shadow: none!important;
+}
+.duiqi {
+	margin-left: -26px!important;
+	margin-top: 7px;
+	width: 200px!important;
+}
+.form-horizontal .form-group {
+	margin-right: -100px!important;
+}
+.select-duiqi {
+	height: 25px!important;
+	color: #ccc!important;
+	margin-left: -25px;
+	margin-top: 6px;
+	width: 200px!important;
+}
+.linkCcc {
+	color: #9095ab!important;
+	text-decoration: underline;
+	padding-right: 10px;
+}
+.linkCcc:hover {
+	color: #000!important;
+	text-decoration: underline;
+}
+.modal {
+	color: #4b4b4b;
+}
+.top100 {
+	margin-top: -25px!important;
+	height: 40px!important;
+	line-height: 67px!important;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+/*slide.css*/
+
+/*设置滑块*/
+.grade_warp {
+    /*width:840px;margin:10px auto 15px auto;*/
+}
+
+.User_grade {
+    width: 520px;
+    overflow: hidden;
+    margin: 0 auto;
+    /*float:left;*/
+}
+
+.User_ratings .ratings_title {
+    width: 815px;
+    height: 78px;
+    font-family: "微软雅黑", "宋体";
+    font-size: 24px;
+    color: #aaaaaa;
+}
+
+.User_ratings .ratings_title01 {
+    width: 407px;
+    height: auto;
+    font-family: "微软雅黑", "宋体";
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.User_ratings .ratings_title p {
+    float: left;
+}
+
+.User_ratings .ratings_title p span {
+    font-size: 48px;
+}
+
+.User_ratings .ratings_title p i {
+    color: #7dc234;
+    font-style: normal;
+}
+
+.User_ratings .ratings_title01 p span {
+    font-size: 18px;
+}
+
+.User_ratings .ratings_title01 p i {
+    color: #7dc234;
+    font-style: normal;
+}
+
+.User_ratings .ratings_title01 input {
+    width: 120px;
+    height: 48px;
+    border: 0;
+    margin: 15px auto auto 45px;
+    float: left;
+    background: url(../images/batton_01.png) -202px -2441px no-repeat;
+}
+
+.User_ratings .ratings_title01 input:hover {
+    background: url(../images/batton_01.png) -202px -2489px no-repeat;
+}
+
+.User_ratings .ratings_title01 input01 {
+    background: url(../images/batton_01.png) -202px -2537px no-repeat;
+}
+
+.User_ratings .ratings_title input {
+    width: 120px;
+    height: 48px;
+    border: 0;
+    margin: 15px auto auto 45px;
+    float: left;
+    background: url(../images/batton_01.png) -202px -2441px no-repeat;
+}
+
+.User_ratings .ratings_title input:hover {
+    background: url(../images/batton_01.png) -202px -2489px no-repeat;
+}
+
+.User_ratings .ratings_title input01 {
+    background: url(../images/batton_01.png) -202px -2537px no-repeat;
+}
+
+.User_ratings .ratings_bars {
+    width: 520px;
+    height: 60px;
+    margin-top: 20px;
+    float: left;
+}
+
+.User_ratings .ratings_bars .bars_10 {
+    font-size: 16px;
+    line-height: 25px;
+    float: left;
+    color: #a0a0a0;
+}
+
+.User_ratings .ratings_bars .scale {
+    width: 400px;
+    height: 13px;
+    float: left;
+    margin: 7px 10px auto 10px;
+    position: relative;
+    background: url(../images/progress02.png) 0 0 no-repeat;
+}
+
+.User_ratings .ratings_bars .scale div {
+    width: 0px;
+    position: absolute;
+    width: 0;
+    left: 0;
+    height: 13px;
+    bottom: 0;
+    background: url(../images/progress02.png) 0 -14px no-repeat;
+}
+
+.User_ratings .ratings_bars .scale>span {
+    width: 50px;
+    height: 32px;
+    position: absolute;
+    left: -2px;
+    top: -9px;
+    cursor: pointer;
+    background: url(../images/circle.png) no-repeat;
+    line-height: 80px;
+}
+
+/*nouislider.css*/
+
+.noUi-target * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-touch-callout: none;
+	-ms-touch-action: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	cursor: default;
+}
+.slider-label {
+	padding-top: 8px;
+	display: block;
+}
+/*	Main slider bar;
+ *		Standard styles no longer incorrectly force a
+ *		width or height on the slider.
+ */
+
+.noUi-base {
+	width: 100%;
+	height: 8px;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	/* border: 1px solid #DDDDDD; */
+	
+	z-index: 1;
+}
+/*	Handles + active state;
+ *		The :after pseudo-element wont inherit
+ *		box-sizing, so it needs to applied manually.
+ */
+
+.noUi-handle {
+	height: 32px;
+	margin: -13px 0 0 -9px;
+	width: 80px;
+	cursor: pointer;
+	background: url("../images/circle.png") no-repeat;
+	outline: none;
+	padding-top: 7px;
+}
+.noUi-active {
+	background: #E9E9E9;
+	outline: none;
+}
+.noUi-active:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	content: "";
+	/*display: block;*/
+	height: 100%;
+	/*border: 1px solid #DDD;*/
+}
+/*	Styling-only classes;
+ *		Structured to prevent double declarations
+ *		for various states of the slider.
+ */
+
+.noUi-connect {
+	background: #EFF3F6;
+}
+.noUi-background {
+	background: #f79e90;
+}
+.slider-danger .noUi-connect {
+	background: #fe635f;
+}
+.slider-success .noUi-connect {
+	background: #8dc859;
+}
+.slider-warning .noUi-connect {
+	background: #f1c40f;
+}
+.slider-info .noUi-connect {
+	background: #8F44AD;
+}
+/*	Functional styles for handle positioning;
+ *		Note that the origins have z-index 0, the base has
+ *		z-index 1; This fixes a bug where borders become invisible.
+ */
+
+.noUi-origin {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 0;
+	border-radius: inherit;
+}
+.noUi-origin-upper {
+	background: inherit !important;
+}
+.noUi-z-index {
+	z-index: 10;
+}
+/*	Adaptations for the vertical slider;
+ *		Some standard styles have been extended to keep
+ *		exceptions for the vertical slider as minimal as possible.
+ */
+
+.noUi-vertical {
+	width: 8px;
+	height: 100%;
+}
+.noUi-vertical .noUi-origin {
+	bottom: 0;
+	left: 0;
+}
+.noUi-vertical .noUi-handle {
+	margin: -9px 0 0 -4px;
+}
+
+.noUi-target[disabled] .noUi-base {
+	background: #999;
+}
+.noUi-target[disabled] .noUi-connect {
+	background: #BBB;
+}
+.noUi-state-tap .noUi-origin {
+	-webkit-transition: left 0.3s, top 0.3s;
+	transition: left 0.3s, top 0.3s;
+}

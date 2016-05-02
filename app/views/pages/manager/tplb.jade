@@ -1,0 +1,78 @@
+block content
+
+.container(style="max-width:930px")
+    .panel.panel-default
+        #tplb-toolbar.btn-group
+            if phoslider
+                button#tplb_add.btn.btn-default(type="button" data-toggle="modal")
+                    span.glyphicon.glyphicon-plus(aria-hidden="true") 新增
+            button#tplb_edit.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-pencil(aria-hidden="true" data-toggle="modal" data-target="#addTplb") 编辑
+            button#tplb_delete.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-remove(aria-hidden="true" data-toggle="modal" data-target="#eleteTplb") 删除
+        table#tplb-table(data-toggle="table" data-toolbar="#tplb-toolbar" data-toolbar-align="right" data-id-field="id"
+        data-checkbox-header="true" data-click-to-select="true" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true")
+            thead
+                tr
+                    th(data-field="state" data-checkbox="true")
+                    th(data-field="title") 标题
+                    th(data-field="order") 序号
+                    th(data-field="redirlink") 链接
+                    th(data-field="pholink") 图片地址
+            tbody
+                each item in phoslider
+                    tr(id="item-id-#{item._id}")
+                        td 
+                        td #{item.title}
+                        td #{item.order}
+                        td #{item.redirlink}
+                        td #{item.pholink}
+include ./tplb_form
+    script(type='text/javascript').
+        $("#tplb_add").click(function(){
+            debugger;
+            var row = $("#tplb-table").bootstrapTable('getSelections');
+            var selectPho = row[0];
+             $.ajax({  
+                 type:'post',  
+                 url:"manager/tplbEdit",  
+                 data:selectPho,  
+                 success:function(data){  //以我的写法，这里success是没有执行到的，直接跑到message处理程序，成功删除就over了  
+                     if(data){  
+                        $('#addTplb').modal('show');
+                         console.log('成功了啊');  
+                     } else{  
+                          console.log("返回值为空");  
+                     }  
+                 }  
+             }); 
+        })
+        $("#tplb_delete").click(function(){
+            var rows = $("#tplb-table").bootstrapTable('getSelections');
+            if(rows.length>0){
+                var delObj={
+                    img:[],
+                    id:[]
+                };
+                for(var i=0;i<rows.length;i++){
+                    delObj.id.push(rows[i]._id)
+                    delObj.img.push(rows[i].pholink)
+                }
+                $.ajax({  
+                 type:'post',  
+                 url:"manager/tplbDel",  
+                 data:delObj,  
+                 success:function(data){  //以我的写法，这里success是没有执行到的，直接跑到message处理程序，成功删除就over了  
+                     if(data){  
+                         console.log('成功了啊');  
+                     } else{  
+                          console.log("返回值为空");  
+                     }  
+                 }  
+             }); 
+            }
+        })
+        
+
+
+       

@@ -1,0 +1,20 @@
+extends ../layout
+block content
+	div#myCarousel.carousel.slide
+		ol.carousel-indicators
+			li.active(data-target="#myCarousel",data-slide-to="0")
+			li(data-target="#myCarousel",data-slide-to="1")
+			li(data-target="#myCarousel",data-slide-to="2")
+		div.carousel-inner#carousel-inner
+			div.item.active
+				img(src="/image/01.jpg" alt="First slide")
+			div.item
+				img(src="/image/02.jpg" alt="Second slide")
+			div.item
+				img(src="/image/03.jpg" alt="Third slide")
+		a.carousel-control.left(href="#myCarousel" 
+	      data-slide="prev") 
+			span &lsaquo;
+		a.carousel-control.right(href="#myCarousel" 
+	      data-slide="next") 
+			span &rsaquo;
