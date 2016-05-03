@@ -21,7 +21,7 @@ block content
                     th(data-field="pholink") 图片地址
             tbody
                 each item in phoslider
-                    tr(id="item-id-#{item._id}")
+                    tr(id="#{item._id}")
                         td 
                         td #{item.title}
                         td #{item.order}
@@ -48,6 +48,7 @@ include ./tplb_form
              }); 
         })
         $("#tplb_delete").click(function(){
+        debugger
             var rows = $("#tplb-table").bootstrapTable('getSelections');
             if(rows.length>0){
                 var delObj={

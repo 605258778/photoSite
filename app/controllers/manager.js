@@ -80,25 +80,23 @@ exports.tplbEdit = function(req, res){
         })
 }
 exports.tplbDel = function(req, res) {
-    var delObj = req.query.delObj;
-    for(var i=0;i<2;i++){
+  debugger;
+    var delObj = req.body;
+    console.log(req.body);
       var count=0;
       if (delObj) {
-        console.log(delObj.id[i]);
+        console.log(delObj.id[0]);
         Phoslider.remove({
-          _id: delObj.id[i]
+          _id: delObj.id[0]
         }, function(err, movie) {
           if (err) {
             console.log(err);
           } else {
-            count++;
-
             res.json({
               success: count
             });
           }
         });
       }
-    }
     res.redirect('/manager')
   }
