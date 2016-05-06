@@ -1,0 +1,103 @@
+block content
+
+.container(style="max-width:930px")
+    .panel.panel-default
+        #tplb-toolbar.btn-group
+            button#tplb_add.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-plus(aria-hidden="true" data-toggle="modal" data-target="#addTplb") 新增
+            button#tplb_edit.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-pencil(aria-hidden="true" data-toggle="modal" data-target="#addTplb") 编辑
+            button#tplb_delete.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-remove(aria-hidden="true" data-toggle="modal" data-target="#eleteTplb") 删除
+        table#tplb-table(data-toggle="table" data-toolbar="#tplb-toolbar" data-toolbar-align="right"
+        data-checkbox-header="true" data-click-to-select="true" data-row-style="rowStyle" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true")
+            thead
+                tr
+                    th(data-field="" data-checkbox="true")
+                    th(data-field="title") 标题
+                    th(data-field="order" data-sortable="true") 序号
+                    th(data-field="redirlink") 链接
+                    th(data-field="pholink") 图片地址
+#addTplb.modal.fade
+  .modal-dialog
+    .modal-content
+      form(method="POST", action="/manager/Phoslider",enctype="multipart/form-data")
+        .modal-header title
+        .modal-body
+            .form-group
+                label(for="inputTitle") 标题
+                input#inputTitle.form-control(type="text", name="Phoslider[title]")
+            .form-group
+                label(for="inputOrder") 序号
+                input#inputOrder.form-control(type="text", name="Phoslider[order]")
+            .form-group
+                label(for="inputRedirlink") 链接
+                input#inputRedirlink.form-control(type="text", name="Phoslider[redirlink]")
+            .form-group
+                label(for="uploadPho") 上传图片
+                input#uploadPho(type="file", name="uploadPho")
+        .modal-footer
+            button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+            button.btn.btn-success(type="submit") 提交
+    script(type='text/javascript').
+        $.ajax({  
+            type:'post',  
+            url:"manager/getpho",  
+            success:function(data){
+                $('#tplb-table').bootstrapTable('destroy').bootstrapTable({
+                data:data
+            });  
+            }  
+        });
+        $("#tplb_edit").click(function(){
+            debugger;
+            var row = getIdSelections();
+             $.ajax({  
+                 type:'post',  
+                 url:"manager/tplbEdit",  
+                 data:row,  
+                 success:function(data){   
+                     if(data){
+                        $('#editTplb').modal('toggle');
+                         console.log('成功了啊');  
+                     } else{  
+                          console.log("返回值为空");  
+                     }  
+                 }  
+             }); 
+        })
+        $("#tplb_delete").click(function(){
+            var rows = getIdSelections();
+            if(rows.length>0){
+                var delObj={
+                    img:[],
+                    id:[]
+                };
+                for(var i=0;i<rows.length;i++){
+                    delObj.id.push(rows[i]._id)
+                    delObj.img.push(rows[i].pholink)
+                }
+                $.ajax({  
+                 type:'post',  
+                 url:"manager/tplbDel",  
+                 data:delObj,  
+                 success:function(data){  //以我的写法，这里success是没有执行到的，直接跑到message处理程序，成功删除就over了  
+                     if(data){  
+                         console.log('成功了啊');  
+                     } else{  
+                          console.log("返回值为空");  
+                     }  
+                 }  
+             }); 
+            }
+        })
+        
+        function getIdSelections() {
+            return $.map($('#tplb-table').bootstrapTable('getSelections'), function (row) {
+                return row;
+            });
+        }
+        
+
+
+       

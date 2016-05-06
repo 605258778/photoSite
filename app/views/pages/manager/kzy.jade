@@ -1,0 +1,40 @@
+.container(style="max-width:930px")
+    .panel.panel-default
+        #kzfl-toolbar.btn-group
+            button#btn_add.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-plus(aria-hidden="true" data-toggle="modal" data-target="#addkzfl") 新增
+            button#btn_edit.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-pencil(aria-hidden="true" data-toggle="modal" data-target="#addkzfl") 编辑
+            button#btn_delete.btn.btn-default(type="button")
+                span.glyphicon.glyphicon-remove(aria-hidden="true" data-toggle="modal" data-target="#eletekzfl") 删除
+        table#kzfl-table(data-toggle="table" data-url="data1.json" data-toolbar="#kzfl-toolbar" data-toolbar-align="right" data-id-field="id"
+        data-checkbox-header="true" data-click-to-select="true" data-show-columns="true" data-search="true" data-show-refresh="true" data-show-toggle="true" data-pagination="true")
+            thead
+                tr
+                    th(data-checkbox="true")
+                    th(data-field="title") 分类名称
+                    th(data-field="order") 序号
+                    th(data-field="redirlink") 链接
+                    th(data-field="pholink") 图片地址
+#addkzfl.modal.fade
+  .modal-dialog
+    .modal-content
+      form(method="POST", action="/manager/Phoslider",enctype="multipart/form-data")
+        .modal-header title
+        .modal-body
+            .form-group
+                label(for="inputTitle") 标题
+                input#inputTitle.form-control(type="text", name="Phoslider[title]")
+            .form-group
+                label(for="inputOrder") 序号
+                input#inputOrder.form-control(type="text", name="Phoslider[order]")
+            .form-group
+                label(for="inputRedirlink") 链接
+                input#inputRedirlink.form-control(type="text", name="Phoslider[redirlink]")
+            .form-group
+                label(for="uploadPho") 上传图片
+                input#uploadPho(type="file", name="uploadPho")
+        .modal-footer
+            button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+            button.btn.btn-success(type="submit") 提交
+    

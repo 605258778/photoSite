@@ -1,0 +1,67 @@
+extends ../../layout
+
+block content
+    div.container
+        div.leftsidebar_box
+            dl.system_log
+                dt 首页
+                    img(src='image/select_xl01.png')
+                dd.first_dd
+                    a(href='#tplb' aria-controls="tplb" role="tab" data-toggle="tab") 图片轮播
+                dd
+                    a(href='#zxzx' aria-controls="zxzx" role="tab" data-toggle="tab") 最新咨询
+            dl.custom
+                dt 最新客照
+                    img(src='image/select_xl01.png')
+                dd.first_dd
+                    a(href='#kzy' aria-controls="kzy" role="tab" data-toggle="tab") 客照一
+                dd
+                    a(href='#kze' aria-controls="kze" role="tab" data-toggle="tab") 客照二
+                dd
+                    a(href='#kzs' aria-controls="kzs" role="tab" data-toggle="tab") 客照三
+            dl.channel
+                dt(href='#cgjs' aria-controls="cgjs" role="tab" data-toggle="tab") 场馆介绍
+            dl.app
+                dt 礼服造型
+                    img(src='image/select_xl01.png')
+                dd.first_dd
+                    a(href='#zxy' aria-controls="zxy" role="tab" data-toggle="tab") 造型一
+                dd
+                    a(href='#zxe' aria-controls="zxe" role="tab" data-toggle="tab") 造型二
+            dl.cloud
+                dt(href='#cxtg' aria-controls="cxtg" role="tab" data-toggle="tab") 促销团购
+            dl.syetem_management
+                dt(href='#zxyy' aria-controls="zxyy" role="tab" data-toggle="tab") 在线预约
+            dl.source
+                dt(href='#yjfk' aria-controls="yjfk" role="tab" data-toggle="tab") 意见反馈
+        div#rightContent.pd0px
+            div.tab-content
+                div#tplb.tab-pane.active(role="tabpanel")
+                    include ./tplb
+                div#zxzx.tab-pane(role="tabpanel")
+                    include ./zxzx
+                div#kzy.tab-pane(role="tabpanel")
+                    include ./kzy
+                div#kze.tab-pane(role="tabpanel")
+                    include ./kze
+                div#kzs.tab-pane(role="tabpanel")
+                    include ./kzs
+                div#cgjs.tab-pane(role="tabpanel")
+                    include ./cgjs
+                div#zxy.tab-pane(role="tabpanel")
+                    include ./zxy
+                div#zxe.tab-pane(role="tabpanel")
+                    include ./zxe
+                div#cxtg.tab-pane(role="tabpanel")
+                    include ./cxtg
+                div#zxyy.tab-pane(role="tabpanel")
+                    include ./zxyy
+                div#yjfk.tab-pane(role="tabpanel")
+                    include ./yjfk
+    link(href="/libs/style/manager.css",rel="stylesheet")
+    script(src="/js/manager.js")
+    script(src="/js/jquery.nouislider.min.js")
+    link(href="/libs/style/bootstrap-table.min.css",rel="stylesheet")
+    script(src="/js/bootstrap-table.js") 
+    script(src="/js/bootstrap-table-export.js")
+    // script(src="/js/bootstrap-table-zh-CN.min.js")

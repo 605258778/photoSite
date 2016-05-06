@@ -1,5 +1,4 @@
 var Index = require('../app/controllers/index')
-var Zxkz = require('../app/controllers/zxkz')
 var Guest = require('../app/controllers/guest')
 var Manager = require('../app/controllers/manager')
 //路由处理层
@@ -10,10 +9,12 @@ module.exports = function(app) {
 	})
 	//index page
 	app.get('/',Index.index)
-	app.get('/zxkz',Zxkz.index)
 	//guest page
 	app.get('/guest',Guest.index)
 	//manager
 	app.get('/manager',Manager.index)
+	app.post('/manager/getpho',Manager.getpho)
+	app.post('/manager/tplbEdit',Manager.tplbEdit)
+	app.post('/manager/tplbDel',Manager.tplbDel)
 	app.post('/manager/Phoslider',Manager.saveSliderPho,Manager.saveSlider)
 }

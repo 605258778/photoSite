@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+	div#myCarousel.carousel.slide
+		ol.carousel-indicators
+			- for (var i = 0; i < phoslider.length; ++i) 
+				if i==0
+					li.active(data-target="#myCarousel",data-slide-to="#{i}")
+				else
+					li(data-target="#myCarousel",data-slide-to="#{i}")
+		div.carousel-inner#carousel-inner
+			- for (var j = 0; j < phoslider.length; ++j) 
+				if j==0
+					div.item.active
+						a(href="#{phoslider[j].redirlink}")
+							img(src="./upload/#{phoslider[j].pholink}" alt="First slide")
+				else 
+					div.item
+						a(href="#{phoslider[j].redirlink}")
+							img(src="./upload/#{phoslider[j].pholink}" alt="First slide")
+		a.carousel-control.left(href="#myCarousel" 
+	      data-slide="prev") 
+			span &lsaquo;
+		a.carousel-control.right(href="#myCarousel" 
+	      data-slide="next") 
+			span &rsaquo;
+	link(href="/libs/style/index.css",rel="stylesheet")

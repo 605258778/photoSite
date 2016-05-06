@@ -4,14 +4,26 @@ var fs = require('fs')
 var path = require('path')
 
 exports.index = function(req,res){
-    res.render('./manager/manager', {
+  Phoslider
+    .find({})
+    .exec(function (err, phoslider) {
+        res.render('./manager/manager', {
             title: '系统管理',
+            phoslider:phoslider
         })
+    })
 }
+exports.getpho = function(req,res){
+  Phoslider
+    .find({})
+    .exec(function (err, phoslider) {
+        return res.send(phoslider);
+    })
+}
+
 //上传轮播图片
 exports.saveSliderPho = function (req, res, next) {
-	console.log('hello')
-	console.log(req.body)
+	console.log('保存图片')
 	var PhoData = req.files.uploadPho
 	var filePath = PhoData.path
 	var originalFilename = PhoData.originalFilename
@@ -21,7 +33,7 @@ exports.saveSliderPho = function (req, res, next) {
 			var timestamp = Date.now()
 			var type = PhoData.type.split('/')[1]
 			var Pho = timestamp + '.' + type	
-			var newPath = path.join(__dirname, '../../', 'upload/' + Pho)
+			var newPath = path.join(__dirname, '../../', 'public/upload/' + Pho)
 
 			fs.writeFile(newPath, data, function (err) {
 				req.pholink = Pho
@@ -34,6 +46,7 @@ exports.saveSliderPho = function (req, res, next) {
 }
 //保存轮播图片
 exports.saveSlider = function(req, res) {
+  console.log('保存到数据库')
   var id = req.body.Phoslider._id
   var PhosliderObj = req.body.Phoslider
   var _Phoslider
@@ -52,16 +65,45 @@ exports.saveSlider = function(req, res) {
           console.log(err)
         }
         res.redirect('/manager')
+        console.log('ok')
       })
     })
   }
   else {
     _Phoslider = new Phoslider(PhosliderObj)
-    _Phoslider.save(function(err, category) {
+    _Phoslider.save(function(err, Phoslider) {
         if (err) {
           console.log(err)
         }
         res.redirect('/manager')
+        console.log('ok')
     })
   }
 }
+exports.tplbEdit = function(req, res){
+  res.render('./manager/tplb_form', {
+            title: '编辑',
+            phosEdit:req.body
+        })
+}
+exports.tplbDel = function(req, res) {
+  debugger;
+    var delObj = req.body;
+    console.log(req.body);
+      var count=0;
+      if (delObj) {
+        console.log(delObj.id[0]);
+        Phoslider.remove({
+          _id: delObj.id[0]
+        }, function(err, movie) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.json({
+              success: count
+            });
+          }
+        });
+      }
+    res.redirect('/manager')
+  }
