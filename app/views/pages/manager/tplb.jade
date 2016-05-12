@@ -3,8 +3,9 @@ block content
 .container(style="max-width:930px")
     .panel.panel-default
         #tplb-toolbar.btn-group
-            button#tplb_add.btn.btn-default(type="button")
-                span.glyphicon.glyphicon-plus(aria-hidden="true" data-toggle="modal" data-target="#addTplb") 新增
+            if phoslider
+                button#tplb_add.btn.btn-default(type="button" data-toggle="modal")
+                    span.glyphicon.glyphicon-plus(aria-hidden="true") 新增
             button#tplb_edit.btn.btn-default(type="button")
                 span.glyphicon.glyphicon-pencil(aria-hidden="true" data-toggle="modal" data-target="#addTplb") 编辑
             button#tplb_delete.btn.btn-default(type="button")
@@ -91,13 +92,11 @@ block content
              }); 
             }
         })
-        
         function getIdSelections() {
             return $.map($('#tplb-table').bootstrapTable('getSelections'), function (row) {
                 return row;
             });
         }
-        
 
 
        

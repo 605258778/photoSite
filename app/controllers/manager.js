@@ -34,7 +34,6 @@ exports.saveSliderPho = function (req, res, next) {
 			var type = PhoData.type.split('/')[1]
 			var Pho = timestamp + '.' + type	
 			var newPath = path.join(__dirname, '../../', 'public/upload/' + Pho)
-
 			fs.writeFile(newPath, data, function (err) {
 				req.pholink = Pho
 				next()
